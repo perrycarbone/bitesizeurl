@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'pages#home'
+  root to: 'ui#index'
+  get 'ui(/:action)', controller: 'ui'
 
 end
