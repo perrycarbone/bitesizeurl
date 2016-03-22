@@ -7,7 +7,6 @@ class UrlsController < ApplicationController
       redirect_to @url.full_url
       @url.times_visited += 1
       @url.save
-      require 'pry'; binding.pry
     else
       render_404
     end
