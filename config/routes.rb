@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  root to: 'ui#index'
-  get 'ui(/:action)', controller: 'ui'
-
+  root to: 'pages#home'
+  get "*path", to: "urls#search", via: :all
 end
