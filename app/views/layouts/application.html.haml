@@ -1,0 +1,20 @@
+%html(lang="en-US")
+  %head
+    %title Bitesize URL
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = csrf_meta_tag
+    = stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+  %body
+    %header
+      = render 'shared/header'
+    #main{:role => "main"}
+  .container
+    .row
+      .span12
+        = render 'shared/messages'
+        = yield
+    %footer
+      %div.col-lg-12{:style => "text-align: center"}
+        &copy 2016 Perry S. Carbone
