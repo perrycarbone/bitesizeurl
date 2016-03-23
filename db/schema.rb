@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323025902) do
+ActiveRecord::Schema.define(version: 20160323154304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160323025902) do
   create_table "urls", force: :cascade do |t|
     t.string   "full_url"
     t.string   "short_url"
-    t.integer  "times_visited"
+    t.integer  "times_visited", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,7 +5,7 @@
         %h3 Welcome to BitesizeURL!
         %p Enter a URL in the text field below to create a Bitesize URL.
         %br
-        = f.text_field :long_url, label: "URL:"
+        = f.text_field "url[full_url]", label: "URL:"
         = f.form_group do
           = f.submit "Get Bitesize URL", class: "btn btn-success"
 
