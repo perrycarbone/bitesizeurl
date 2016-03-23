@@ -19,10 +19,12 @@ describe UrlsController do
       end
     end
 
-    it "renders 404 page not found when no match identified in database" do
-      get :search, { path: "someunrecognizedpath" }
+    context "when a match is identified in the database" do
+      it "renders 404 page not found when no match identified in database" do
+        get :search, { path: "someunrecognizedpath" }
 
-      expect(response).to render_template(:file => "#{Rails.root}/public/404.html")
+        expect(response).to render_template(:file => "#{Rails.root}/public/404.html")
+      end
     end
   end
 end
