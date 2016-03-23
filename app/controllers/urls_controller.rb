@@ -14,6 +14,10 @@ class UrlsController < ApplicationController
     end
   end
 
+  def show
+    @url = Url.find_by(id: params[:id])
+  end
+
   def create
     @url = Url.find_by(full_url: params[:url].values)
 

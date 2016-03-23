@@ -1,0 +1,12 @@
+%section
+  %header
+    %form.form-horizontal
+      %h3 Your BitesizeURL
+      <br>
+      %p.full_url "#{@url.full_url}"
+      %p has been Bitesized as the following shortened URL:
+      <br>
+      .well.url
+        %h4
+          = link_to add_url_prefix(@url.short_url), add_url_prefix(@url.short_url)
+        %a(href=home_page_path) Go Back to Homepage

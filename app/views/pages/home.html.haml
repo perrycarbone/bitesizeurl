@@ -1,23 +1,25 @@
 %section
   %header
-    .well
-      =bootstrap_form_tag(url: home_page_path, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-5') do |f|
+    .well.homepage
+      =bootstrap_form_tag(url: home_page_path, layout: :horizontal, label_col: 'col-sm-1', control_col: 'col-lg-10') do |f|
         %h3 Welcome to BitesizeURL!
         %p Enter a URL in the text field below to create a Bitesize URL.
         %br
         = f.text_field "url[full_url]", label: "URL:"
         = f.form_group do
-          = f.submit "Get Bitesize URL", class: "btn btn-success"
+          = f.submit "Get Bitesize URL", class: "btn btn-lg btn-success"
 
+    <br>
+    <br>
     %section
       %header
-        %h3 Top 100 Visited URLs
+        %h3#top-100-title Top 100 Visited URLs
       %table.table
         %thead
           %tr
             %th URL
             %th Bitesize URL
-            %th Times Visited
+            %th#times-visited Times Visited
         %tbody
           - @urls.each do |url|
             %tr
@@ -25,4 +27,4 @@
                 = link_to url.full_url, "#{url.full_url}"
               %td
                 = link_to add_url_prefix(url.short_url), "#{add_url_prefix(url.short_url)}"
-              %td #{url.times_visited}
+              %td#times-visited #{url.times_visited}
