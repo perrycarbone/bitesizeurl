@@ -27,7 +27,7 @@ class UrlsController < ApplicationController
       if valid_url?(@url.full_url) && @url.save
         @url.short_url = UrlGenerator.new(@url.id).generate_short_url
         @url.save
-        redirect_to url_path(@url), flash: { success: "You have succesfully created a BitesizeURL!" }
+        redirect_to url_path(@url), flash: { success: "You have succesfully created a BytesizeURL!" }
       else
         redirect_to home_page_path, flash: { danger: "Please enter a valid url." }
       end

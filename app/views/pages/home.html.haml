@@ -2,12 +2,12 @@
   %header
     .well.homepage
       =bootstrap_form_tag(url: home_page_path, layout: :horizontal, label_col: 'col-sm-1', control_col: 'col-lg-10') do |f|
-        %h3 Welcome to BitesizeURL!
-        %p Enter a URL in the text field below to create a Bitesize URL.
+        %h3 Welcome to BytesizeURL!
+        %p Enter a URL in the text field below to create a Bytesize URL.
         %br
         = f.text_field "url[full_url]", label: "URL:"
         = f.form_group do
-          = f.submit "Get Bitesize URL", class: "btn btn-lg btn-success"
+          = f.submit "Get Bytesize URL", class: "btn btn-lg btn-success"
 
     <br>
     <br>
@@ -18,7 +18,7 @@
         %thead
           %tr
             %th URL
-            %th Bitesize URL
+            %th Bytesize URL
             %th#times-visited Times Visited
         %tbody
           - @urls.each do |url|

@@ -4,7 +4,7 @@ module ApplicationHelper
     if Rails.env.development?
       "http://localhost:3000/" + "#{short_url}"
     else
-      "http://bitesizeurl.herokuapp.com/" + "#{short_url}"
+      "http://bytesizeurl.herokuapp.com/" + "#{short_url}"
     end
   end
 end
