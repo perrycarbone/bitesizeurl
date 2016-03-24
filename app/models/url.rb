@@ -7,12 +7,12 @@ class Url < ActiveRecord::Base
     self.save
   end
 
-  def short_url_can_be_generated?
+  def path_can_be_generated?
     valid_url?(self.full_url) && self.save
   end
 
   def generate_shortened_url!
-    self.short_url = UrlGenerator.new(self.id).generate_short_url
+    self.path = PathGenerator.new(self.id).generate_path
     self.save
   end
 

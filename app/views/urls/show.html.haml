@@ -8,5 +8,5 @@
       <br>
       .well.url
         %h4
-          = link_to add_url_prefix(@url.short_url), add_url_prefix(@url.short_url)
+          = link_to add_url_prefix(@url.path), add_url_prefix(@url.path)
         %a(href=home_page_path) Go Back to Homepage

@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323154304) do
+ActiveRecord::Schema.define(version: 20160324155204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "urls", force: :cascade do |t|
     t.string   "full_url"
-    t.string   "short_url"
+    t.string   "path"
     t.integer  "times_visited", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "urls", ["full_url"], name: "index_urls_on_full_url", unique: true, using: :btree
-  add_index "urls", ["short_url"], name: "index_urls_on_short_url", unique: true, using: :btree
+  add_index "urls", ["path"], name: "index_urls_on_path", unique: true, using: :btree
 
 end

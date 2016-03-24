@@ -1,9 +1,9 @@
-require 'url_generator'
+require 'path_generator'
 
 class UrlsController < ApplicationController
 
   def search
-    @url = Url.find_by(short_url: params["path"])
+    @url = Url.find_by(path: params["path"])
 
     if @url
       redirect_to @url.full_url
@@ -23,7 +23,7 @@ class UrlsController < ApplicationController
     if @url == nil
       @url = Url.new(url_params)
 
-      if @url.short_url_can_be_generated?
+      if @url.path_can_be_generated?
         @url.generate_shortened_url!
         redirect_to url_path(@url), flash: { success: "You have succesfully created a BytesizeURL!" }
       else

@@ -26,5 +26,5 @@
               %td
                 = link_to url.full_url, "#{url.full_url}"
               %td
-                = link_to add_url_prefix(url.short_url), "#{add_url_prefix(url.short_url)}"
+                = link_to add_url_prefix(url.path), "#{add_url_prefix(url.path)}"
               %td#times-visited #{url.times_visited}

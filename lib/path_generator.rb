@@ -1,4 +1,4 @@
-class UrlGenerator
+class PathGenerator
 
   CHARSET = ('a'..'z').to_a + ('A'..'Z').to_a +
             %w[0 1 2 3 4 5 6 7 8 9 ' ( ) * - . _]
@@ -9,7 +9,7 @@ class UrlGenerator
     @row_id = row_id
   end
 
-  def generate_short_url
+  def generate_path
     result = []
     value = row_id
     numeric_base = CHARSET.count
