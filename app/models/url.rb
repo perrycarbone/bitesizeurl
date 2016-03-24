@@ -1,5 +1,4 @@
 class Url < ActiveRecord::Base
-
   validates :full_url, presence: true
 
   def update_times_visited!
@@ -12,8 +11,8 @@ class Url < ActiveRecord::Base
   end
 
   def generate_shortened_url!
-    self.path = PathGenerator.new(self.id).generate_path
-    self.save
+    self.short_path = PathGenerator.new(self.id).generate_path
+    self.save!
   end
 
   private

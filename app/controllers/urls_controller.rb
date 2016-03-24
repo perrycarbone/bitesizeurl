@@ -3,7 +3,7 @@ require 'path_generator'
 class UrlsController < ApplicationController
 
   def search
-    @url = Url.find_by(path: params["path"])
+    @url = Url.find_by(short_path: params["path"])
 
     if @url
       redirect_to @url.full_url, status: 301
