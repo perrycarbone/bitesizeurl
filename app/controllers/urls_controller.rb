@@ -6,7 +6,7 @@ class UrlsController < ApplicationController
     @url = Url.find_by(path: params["path"])
 
     if @url
-      redirect_to @url.full_url
+      redirect_to @url.full_url, status: 301
       @url.update_times_visited!
     else
       render_404
