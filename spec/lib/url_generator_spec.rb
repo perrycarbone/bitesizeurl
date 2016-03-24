@@ -17,24 +17,24 @@ describe UrlGenerator do
   it "returns a two character string for id 70" do
     short_url = UrlGenerator.new(70).generate_short_url
 
-    expect(short_url).to eq("bc")
+    expect(short_url).to eq("aa")
   end
 
-  it "returns a two character string for id 4_692" do
-    short_url = UrlGenerator.new(4_692).generate_short_url
+  it "returns a two character string for id 4_830" do
+    short_url = UrlGenerator.new(4_830).generate_short_url
 
-    expect(short_url).to eq("_.")
+    expect(short_url).to eq("__")
   end
 
-  it "returns a three character string for id 4_693" do
-    short_url = UrlGenerator.new(4_693).generate_short_url
+  it "returns a three character string for id 4_831" do
+    short_url = UrlGenerator.new(4_831).generate_short_url
 
-    expect(short_url).to eq("bde")
+    expect(short_url).to eq("aaa")
   end
 
-  it "returns a three character string for id 314_364" do
-    short_url = UrlGenerator.new(314_364).generate_short_url
+  it "returns a three character string for id 333_339" do
+    short_url = UrlGenerator.new(333_339).generate_short_url
 
-    expect(short_url).to eq("_.-")
+    expect(short_url).to eq("___")
   end
 end

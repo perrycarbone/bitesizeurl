@@ -10,13 +10,22 @@ class UrlGenerator
   end
 
   def generate_short_url
-    candidate = []
-    char_length = 1
-    loop do
-      candidate = CHARSET.permutation(char_length).to_a[row_id - 1]
-      break unless candidate == nil
-      char_length += 1
+    result = []
+    value = row_id
+    numeric_base = CHARSET.count
+
+    while value > 0
+      remainder = value % numeric_base
+      if remainder == 0
+        remainder = CHARSET.count
+        value = value / numeric_base - 1
+      else
+        value /= numeric_base
+      end
+
+      result.unshift(CHARSET[remainder - 1])
     end
-    candidate.join
+
+    result.join
   end
 end

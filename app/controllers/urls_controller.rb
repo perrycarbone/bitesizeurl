@@ -29,11 +29,11 @@ class UrlsController < ApplicationController
         @url.save
         redirect_to url_path(@url), flash: { success: "You have succesfully created a BytesizeURL!" }
       else
-        redirect_to home_page_path, flash: { danger: "Please enter a valid url." }
+        redirect_to home_page_path, flash: { danger: "Please enter a valid URL." }
       end
 
     else
-      redirect_to url_path(@url), flash: { success: "Hey, we already have a BiteSizeURL for that one.  Here it is!" }
+      redirect_to url_path(@url), flash: { success: "We already have a BiteSizeURL for this link.  Here you go!" }
     end
   end
 
