@@ -7,8 +7,7 @@ class UrlsController < ApplicationController
 
     if @url
       redirect_to @url.full_url
-      @url.times_visited += 1
-      @url.save
+      @url.update_times_visited!
     else
       render_404
     end
@@ -24,9 +23,8 @@ class UrlsController < ApplicationController
     if @url == nil
       @url = Url.new(url_params)
 
-      if valid_url?(@url.full_url) && @url.save
-        @url.short_url = UrlGenerator.new(@url.id).generate_short_url
-        @url.save
+      if @url.short_url_can_be_generated?
+        @url.generate_shortened_url!
         redirect_to url_path(@url), flash: { success: "You have succesfully created a BytesizeURL!" }
       else
         redirect_to home_page_path, flash: { danger: "Please enter a valid URL." }
@@ -47,13 +45,6 @@ class UrlsController < ApplicationController
       format.xml  { head :not_found }
       format.any  { head :not_found }
     end
-  end
-
-  def valid_url?(url)
-    uri = URI.parse(url)
-    uri.kind_of?(URI::HTTP)
-  rescue URI::InvalidURIError
-    false
   end
 
   def url_params
