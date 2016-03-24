@@ -37,4 +37,15 @@ describe UrlGenerator do
 
     expect(short_url).to eq("___")
   end
+
+  it "does not generate duplicate strings" do
+    row_id = 1
+    result = []
+    1000000.times do
+      result << UrlGenerator.new(row_id).generate_short_url
+      row_id += 1
+    end
+
+    expect(result.uniq.count).to eq(1000000)
+  end
 end

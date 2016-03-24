@@ -23,3 +23,11 @@ Rspec is utilized as the testing framework.  To run the entire test suite, run `
 
 ### Deployment
 This app was written with a Heroku deployment stack in mind. However, you can deploy it anywhere assuming you can run Ruby 2.3.0 and Rails 4.2.4 with a Postgres database.
+
+###Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/perrycarbone/bytesizeurl.
+
+###License
+
+The software is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
